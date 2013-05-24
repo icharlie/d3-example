@@ -131,18 +131,11 @@
                  .text(function(d) { return d.name; }); 
                  
                  var _temp = [];
-                 times[0].values.forEach(function(e){
-                   _temp.push({name: e.name, times:e.times, millisecond: e.millisecond});
+                 times.forEach(function(t){
+                   t.values.forEach(function (e) {
+                     _temp.push({name: e.name, times:e.times, millisecond: e.millisecond});
+                   });
                  });
-                 times[1].values.forEach(function(e){
-                   _temp.push({name: e.name, times:e.times, millisecond: e.millisecond});
-                 });    
-                 times[2].values.forEach(function(e){
-                   _temp.push({name: e.name, times:e.times, millisecond: e.millisecond});
-                 });    
-                 times[3].values.forEach(function(e){
-                   _temp.push({name: e.name, times:e.times, millisecond: e.millisecond});
-                 });         
                  
                var line2 = d3.svg.line()
                    .interpolate("monotone")
